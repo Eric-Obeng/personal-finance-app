@@ -1,0 +1,11 @@
+<nav class="nav-bar">
+  <a
+    *ngFor="let item of navItems"
+    class="nav-item"
+    [class.active]="svgService.getActiveIcon() === item.name"
+    (click)="svgService.setActiveIcon(item.name)"
+  >
+    <img [src]="item.path" alt="{{ item.name }} icon" class="nav-icon" />
+    <p class="nav-name">{{ item.name }}</p>
+  </a>
+</nav>
