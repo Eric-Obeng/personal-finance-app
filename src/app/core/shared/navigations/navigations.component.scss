@@ -28,6 +28,7 @@
 
       &.active {
         background-color: $white;
+        border-bottom: 0.4rem solid $green;
       }
 
       &.active .nav-icon {
