@@ -1,0 +1,15 @@
+@use "../../../styleSheet/mixins.scss" as *;
+@use "../../../styleSheet/variables.scss" as *;
+@use "../../../styleSheet/typography.scss" as *;
+
+.overview-container {
+  @include flexbox(column, flex-start, flex-start);
+  gap: 3.2rem;
+  height: 100vh;
+  width: 100%;
+
+  .finance-summary {
+    // height: ;
+    width: 100%;
+  }
+}
