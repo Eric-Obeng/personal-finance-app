@@ -1,0 +1,30 @@
+@use "../../../../styleSheet/mixins" as *;
+@use "../../../../styleSheet/variables" as *;
+
+.balance-card {
+  @include flexbox(column, space-between, flex-start);
+  gap: 1.2rem;
+  width: 100%;
+
+  .card {
+    @include flexbox(column, space-between, flex-start);
+    gap: 1.2rem;
+    width: 100%;
+    padding: 2rem;
+    background: $white;
+    border-radius: 1.2rem;
+
+    .title {
+      color: $grey-500;
+    }
+
+    &.current {
+      background: $grey-900;
+      color: $white;
+
+      .title {
+        color: $white;
+      }
+    }
+  }
+}
