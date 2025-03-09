@@ -10,9 +10,9 @@ export class SvgService {
   private svgList: SvgIcon[] = [
     { name: 'overview', path: 'assets/images/icon-nav-overview.svg' },
     { name: 'transactions', path: 'assets/images/icon-nav-transactions.svg' },
-    { name: 'budget', path: 'assets/images/icon-nav-budgets.svg' },
-    { name: 'pot', path: 'assets/images/icon-nav-pots.svg' },
-    { name: 'bill', path: 'assets/images/icon-nav-recurring-bills.svg' },
+    { name: 'budgets', path: 'assets/images/icon-nav-budgets.svg' },
+    { name: 'pots', path: 'assets/images/icon-nav-pots.svg' },
+    { name: 'recurring-bills', path: 'assets/images/icon-nav-recurring-bills.svg' },
   ];
 
   activeIcon = signal<string | null>(
