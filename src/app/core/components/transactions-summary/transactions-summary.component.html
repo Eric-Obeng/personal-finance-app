@@ -1,0 +1,25 @@
+<div class="transactions-container">
+  <div class="col-1">
+    <p class="text-preset-2">Transactions</p>
+    <a class="link" [routerLink]="['/transactions']">
+      <span>View All</span>
+      <span [innerHTML]="rightArrowIcon"></span>
+    </a>
+  </div>
+  <div class="col-2">
+    @for (transaction of transactions(); track $index) {
+    <div class="transaction-item">
+      <div class="avatar">
+        <img [src]="transaction.avatar" [alt]="transaction.name + 'icon'" />
+        <p class="text-preset-4">{{ transaction.name }}</p>
+      </div>
+      <div class="details">
+        <div class="text-preset-4" [style.color]="transaction.amount > 0 ? '#277c78' : '#201f24'">
+          {{ transaction.amount < 0 ? `${transaction.amount | currency}`: `+${transaction.amount | currency}` }}
+        </div>
+        <p class="text-preset-5 text-regular">{{ transaction.date | date : "d MMM y" }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>
