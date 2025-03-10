@@ -1,0 +1,70 @@
+@use "../../../../styleSheet/mixins" as *;
+@use "../../../../styleSheet/variables" as *;
+
+.pot-summary {
+ @include overview-card();
+
+  .col-1 {
+    @include link()
+  }
+
+  .col-2 {
+    @include flexbox(column, center, flex-start);
+    width: 100%;
+    gap: 2rem;
+
+    .total-saved {
+      @include flexbox(row, flex-start, center);
+      gap: 1.6rem;
+      width: 100%;
+      padding: 1.6rem;
+      background-color: $beige-100;
+      border-radius: 1.2rem;
+
+      .details {
+        @include flexbox(column, flex-start, flex-start);
+        gap: 1.1rem;
+
+        .title {
+          color: $grey-500;
+        }
+
+        .value {
+          color: $grey-900;
+        }
+      }
+    }
+
+    .pots {
+      @include flexbox(row, flex-start, center, wrap);
+      width: 100%;
+      row-gap: 1.6rem;
+
+      .pot-item {
+        @include flexbox(row, flex-start, center);
+        gap: 1.6rem;
+        height: 4.3rem;
+        width: 50%;
+
+        .theme {
+          width: 0.4rem;
+          height: 100%;
+          border-radius: 0.8rem;
+        }
+
+        .details {
+          @include flexbox(column, flex-start, flex-start);
+          gap: 0.4rem;
+
+          .title {
+            color: $grey-500;
+          }
+
+          .total {
+            color: $grey-900;
+          }
+        }
+      }
+    }
+  }
+}
