@@ -4,13 +4,9 @@
 .app {
   @include flexbox(column, flex-start, _);
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   width: 100%;
-
-  .content {
-    padding: 1.6rem 2.4rem;
-  }
 
   .navigation-bar {
     position: absolute;
