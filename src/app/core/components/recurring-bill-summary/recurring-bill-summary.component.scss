@@ -1,0 +1,37 @@
+@use "../../../../styleSheet/mixins" as *;
+@use "../../../../styleSheet/variables" as *;
+
+.bill-container {
+  @include overview-card();
+
+  .col-1 {
+    @include link();
+  }
+
+  .col-2 {
+    @include flexbox(column, center, flex-start);
+    width: 100%;
+    gap: 1.2rem;
+
+    .bill {
+      @include flexbox(row, space-between, center);
+      width: 100%;
+      background-color: $beige-100;
+      padding: 2rem 1.6rem;
+      border-radius: 0.8rem;
+      border-left: 0.4rem solid transparent;
+
+      &.paid {
+        border-left: 0.4rem solid $green;
+      }
+
+      &.upcoming {
+        border-left: 0.4rem solid $yellow;
+      }
+
+      &.due {
+        border-left: 0.4rem solid $cyan;
+      }
+    }
+  }
+}

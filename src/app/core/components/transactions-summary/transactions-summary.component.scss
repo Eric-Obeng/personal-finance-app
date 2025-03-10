@@ -1,0 +1,49 @@
+@use "../../../../styleSheet/mixins" as *;
+@use "../../../../styleSheet/variables" as *;
+
+.transactions-container {
+  @include overview-card();
+  width: 100%;
+
+  .col-1 {
+    @include link();
+  }
+
+  .col-2 {
+    @include flexbox(column, flex-start, flex-start);
+    width: 100%;
+
+    .transaction-item {
+      @include flexbox(row, space-between, flex-start);
+      width: 100%;
+      padding: 2rem 0;
+      border-bottom: 1px solid $grey-100;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .avatar {
+        @include flexbox(row, flex-start, center);
+        gap: 1.6rem;
+
+
+        img {
+          width: 3.2rem;
+          height: 3.2rem;
+          border-radius: 50%;
+        }
+      }
+
+      .details {
+        @include flexbox(column, flex-end, flex-end);
+
+      }
+    }
+  }
+}

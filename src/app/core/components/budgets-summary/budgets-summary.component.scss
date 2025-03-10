@@ -1,0 +1,60 @@
+@use "../../../../styleSheet/mixins" as *;
+@use "../../../../styleSheet/variables" as *;
+
+.budget-container {
+  @include overview-card();
+
+  .col-1 {
+    @include link();
+  }
+
+  .col-2 {
+    @include flexbox(column, flex-start, center);
+    gap: 2rem;
+
+    .chart {
+      position: relative;
+
+      .center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.6rem;
+        color: $grey-500;
+      }
+    }
+
+    .budget {
+      @include flexbox(row, flex-start, center, wrap);
+      width: 100%;
+      row-gap: 1.6rem;
+
+      .budget-item {
+        @include flexbox(row, flex-start, center);
+        gap: 1.6rem;
+        height: 4.3rem;
+        width: 50%;
+
+        .theme {
+          width: 0.4rem;
+          height: 100%;
+          border-radius: 0.8rem;
+        }
+
+        .details {
+          @include flexbox(column, flex-start, flex-start);
+          gap: 0.4rem;
+
+          .title {
+            color: $grey-500;
+          }
+
+          .total {
+            color: $grey-900;
+          }
+        }
+      }
+    }
+  }
+}

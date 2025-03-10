@@ -1,0 +1,23 @@
+<div class="bill-container">
+  <div class="col-1">
+    <p class="text-preset-2">Recurring Bills</p>
+    <a class="link" [routerLink]="['/recurring-bills']">
+      <span>See Details</span>
+      <span [innerHTML]="rightArrowIcon"></span>
+    </a>
+  </div>
+  <div class="col-2">
+    <div class="bill paid">
+      <p>Paid Bill</p>
+      <p>{{ paidBills() | currency }}</p>
+    </div>
+    <div class="bill upcoming">
+      <p>Total Upcoming</p>
+      <p>{{ upcomingBills() | currency }}</p>
+    </div>
+    <div class="bill due">
+      <p>Due Soon</p>
+      <p>{{ dueSoonBills() | currency }}</p>
+    </div>
+  </div>
+</div>

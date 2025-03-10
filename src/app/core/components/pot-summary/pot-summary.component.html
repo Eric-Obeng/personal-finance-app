@@ -1,0 +1,31 @@
+<div class="pot-summary">
+  <div class="col-1">
+    <p class="text-preset-2">Pots</p>
+    <a class="link" [routerLink]="['/pots']">
+      <span>See Details</span>
+      <span [innerHTML]="rightArrowIcon"></span>
+    </a>
+  </div>
+  <div class="col-2">
+    <div class="total-saved">
+      <div class="icon">
+        <span [innerHTML]="potsIcon" class="svg"></span>
+      </div>
+      <div class="details">
+        <p class="text-preset-4 title">Total Saved</p>
+        <h1 class="text-preset-1 value">{{ totalPots() | currency }}</h1>
+      </div>
+    </div>
+    <div class="pots">
+      @for (pot of firstFourPots(); track $index) {
+      <div class="pot-item">
+        <span class="theme" [style.backgroundColor]="pot.theme"> </span>
+        <div class="details">
+          <p class="text-preset-5 title">{{ pot.name }}</p>
+          <h1 class="text-preset-4 total">{{ pot.total | currency }}</h1>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
