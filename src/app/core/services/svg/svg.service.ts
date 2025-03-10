@@ -22,6 +22,9 @@ export class SvgService {
       name: 'right-arrow',
       path: 'assets/images/icon-caret-right.svg',
     },
+    {
+      name: 'icon-pot', path: 'assets/images/icon-pot.svg'
+    }
   ];
 
   activeIcon = signal<string | null>(
