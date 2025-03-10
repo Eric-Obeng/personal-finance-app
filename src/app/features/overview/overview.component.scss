@@ -7,9 +7,46 @@
   gap: 3.2rem;
   height: 100vh;
   width: 100%;
+  overflow-y: auto;
+  padding: 1.6rem 2.4rem;
+  padding-bottom: 10rem;
+  scrollbar-width: none;
 
   .finance-summary {
-    // height: ;
     width: 100%;
+  }
+
+  .details {
+    @include flexbox(column, flex-start, flex-start);
+    width: 100%;
+    gap: 2.4rem;
+
+    .col-1 {
+      @include flexbox(column, flex-start, flex-start);
+      gap: 1.6rem;
+      width: 100%;
+
+      .pots {
+        width: 100%;
+      }
+
+      .transactions {
+        width: 100%;
+      }
+    }
+
+    .col-2 {
+      @include flexbox(column, flex-start, flex-start);
+      gap: 1.6rem;
+      width: 100%;
+
+      .budget {
+        width: 100%;
+      }
+
+      .bill {
+        width: 100%;
+      }
+    }
   }
 }
