@@ -1,0 +1,33 @@
+<div class="budget-container">
+  <div class="col-1">
+    <p class="text-preset-2">Budgets</p>
+    <a class="link" [routerLink]="['/budgets']">
+      <span>View All</span>
+      <span [innerHTML]="rightArrowIcon"></span>
+    </a>
+  </div>
+  <div class="col-2">
+    <div class="chart">
+      <p-chart
+        type="doughnut"
+        [data]="chartData()"
+        [options]="chartOptions"
+      ></p-chart>
+      <div class="center-text">
+        <h2>$338</h2>
+        <p>of {{ totalBudget() | currency }}</p>
+      </div>
+    </div>
+    <div class="budget">
+      @for (budget of budgetSignal(); track $index) {
+      <div class="budget-item">
+        <span class="theme" [style.backgroundColor]="budget.theme"> </span>
+        <div class="details">
+          <p class="text-preset-5 title">{{ budget.category }}</p>
+          <h1 class="text-preset-4 total">{{ budget.maximum | currency }}</h1>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
