@@ -3,6 +3,11 @@ import { routeTitleResolver } from './core/resolvers/routeTitle.resolver';
 
 export const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'overview',
+    pathMatch: 'full',
+  },
+  {
     path: 'overview',
     loadComponent: () =>
       import('./features/overview/overview.component').then(
