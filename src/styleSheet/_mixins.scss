@@ -1,3 +1,5 @@
+@use "./variables.scss" as *;
+
 @mixin flexbox(
   $direction: row,
   $justify: flex-start,
@@ -9,4 +11,31 @@
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
+}
+
+@mixin overview-card {
+  @include flexbox(column, flex-start, flex-start);
+  gap: 2rem;
+  background: $white;
+  width: 100%;
+  border-radius: 1.2rem;
+  padding: 2.4rem 2rem;
+}
+
+@mixin link {
+  @include flexbox(row, space-between, center);
+  width: 100%;
+
+  .link {
+    @include flexbox(row, center, center);
+    gap: 1.2rem;
+    text-decoration: none;
+    color: $grey-500;
+    cursor: pointer;
+
+    &:hover {
+      color: $grey-500;
+      font-weight: 500;
+    }
+  }
 }
