@@ -7,7 +7,10 @@
     [class.active]="svgService.getActiveIcon() === item.name"
     (click)="svgService.setActiveIcon(item.name)"
   >
-    <img [src]="item.path" alt="{{ item.name }} icon" class="nav-icon" />
+    <div
+      [innerHTML]="svgService.getSvgContent(item.path)"
+      class="nav-icon"
+    ></div>
     <p class="nav-name">{{ item.name }}</p>
   </a>
 </nav>
