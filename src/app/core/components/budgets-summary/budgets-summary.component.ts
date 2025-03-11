@@ -23,7 +23,7 @@ export class BudgetsSummaryComponent {
   private backgroundColors = computed(() =>
     this.budgetSignal()?.map((budget) => budget.theme)
   );
-  
+
   totalBudget = computed(() =>
     this.budgetSignal()
       ?.map((budget) => budget.maximum)
