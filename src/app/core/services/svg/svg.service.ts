@@ -24,6 +24,15 @@ export class SvgService {
     },
     {
       name: 'icon-pot', path: 'assets/images/icon-pot.svg'
+    },
+    {
+      name: 'logo-large', path: 'assets/images/logo-large.svg'
+    },
+    {
+      name: 'logo-small', path: 'assets/images/logo-small.svg'
+    },
+    {
+      name: 'minimize-menu', path: 'assets/images/icon-minimize-menu.svg'
     }
   ];
 
