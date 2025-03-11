@@ -1,13 +1,49 @@
 @use "../../../../styleSheet/mixins.scss" as *;
 @use "../../../../styleSheet/variables.scss" as *;
+@use "../../../../styleSheet/breakpoints.scss" as *;
 
 .nav-bar {
   @include flexbox(row, center, center);
+  gap: 2.4rem;
   width: 100%;
+  height: 100%;
+
+  @include mq("laptop") {
+    @include flexbox(column, flex-start, center);
+    gap: 0.4rem;
+  }
+
+  .logo {
+    display: none;
+
+    @include mq("laptop") {
+      display: block;
+      padding: 3.2rem 4rem;
+    }
+  }
+  .nav-list {
+    flex: 1;
+    @include flexbox(row, space-between, center);
+    gap: 0.4rem;
+    width: 100%;
+
+    @include mq("laptop") {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
 
   & a {
     @include flexbox(column, center, center);
     width: 100%;
+    text-decoration: none;
+    color: $grey-900;
+    flex: 1;
+
+    @include mq("laptop") {
+      @include flexbox(row, flex-start, center);
+      gap: 1.6rem;
+    }
 
     &.nav-item {
       width: 100%;
@@ -17,6 +53,17 @@
       border-radius: 0.8rem 0.8rem 0 0;
       transition: background-color 0.3s ease, color 0.3s ease;
 
+      &:hover .nav-name {
+        color: $white;
+      }
+
+      @include mq("laptop") {
+        padding: 1.6rem 3.2rem;
+        border-radius: 0;
+        border-radius: 0 1.2rem 1.2rem 0;
+        max-height: 5.5rem;
+      }
+
       .nav-icon {
         width: 2.4rem;
         transition: filter 0.3s ease, color 0.3s ease;
@@ -24,11 +71,21 @@
 
       &:hover .nav-icon {
         filter: brightness(0) saturate(100%) invert(100%);
+        color: $white;
       }
 
       &.active {
         background-color: $white;
         border-bottom: 0.4rem solid $green;
+
+        @include mq("laptop") {
+          border-left: 0.4rem solid $green;
+          border-bottom: 0;
+        }
+
+        .nav-name {
+          color: $grey-900;
+        }
       }
 
       &.active .nav-icon {
@@ -39,6 +96,32 @@
 
     & .nav-name {
       display: none;
+    }
+
+    @include mq("tablet") {
+      & .nav-name {
+        display: block;
+        font-weight: 600;
+        color: $grey-300;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .fold {
+    justify-self: flex-end;
+    display: none;
+    padding: 1.6rem 2.2rem;
+    margin-bottom: 5.9rem;
+
+    p {
+      color: $grey-300;
+    }
+
+    @include mq("laptop") {
+      display: block;
+      @include flexbox(row, flex-start, center);
+      gap: 1.6rem;
     }
   }
 }

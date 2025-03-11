@@ -1,5 +1,6 @@
 @use "../../../../styleSheet/mixins" as *;
 @use "../../../../styleSheet/variables" as *;
+@use "../../../../styleSheet/breakpoints" as *;
 
 .pot-summary {
  @include overview-card();
@@ -12,6 +13,10 @@
     @include flexbox(column, center, flex-start);
     width: 100%;
     gap: 2rem;
+
+    @include mq("tablet") {
+      @include flexbox(row, space-between, flex-start);
+    }
 
     .total-saved {
       @include flexbox(row, flex-start, center);

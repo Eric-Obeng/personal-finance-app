@@ -26,11 +26,13 @@ export class RecurringBillSummaryComponent {
       ?.filter((transaction) => new Date(transaction.date) < this.today)
       .reduce((acc, transaction) => acc + transaction.amount, 0)
   );
+
   upcomingBills = computed(() =>
     this.recurringBills()
       ?.filter((transaction) => new Date(transaction.date) > this.today)
       .reduce((acc, transaction) => acc + transaction.amount, 0)
   );
+  
   dueSoonBills = computed(() => {
     return this.recurringBills()
       ?.filter((transaction) => {

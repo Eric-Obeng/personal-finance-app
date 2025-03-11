@@ -1,6 +1,7 @@
 @use "../../../styleSheet/mixins.scss" as *;
 @use "../../../styleSheet/variables.scss" as *;
 @use "../../../styleSheet/typography.scss" as *;
+@use "../../../styleSheet/breakpoints.scss" as *;
 
 .overview-container {
   @include flexbox(column, flex-start, flex-start);
@@ -20,6 +21,10 @@
     @include flexbox(column, flex-start, flex-start);
     width: 100%;
     gap: 2.4rem;
+
+    @include mq("laptop") {
+      @include flexbox(row, space-between, flex-start);
+    }
 
     .col-1 {
       @include flexbox(column, flex-start, flex-start);

@@ -1,5 +1,6 @@
 @use "../../../../styleSheet/mixins" as *;
 @use "../../../../styleSheet/variables" as *;
+@use "../../../../styleSheet/breakpoints" as *;
 
 .budget-container {
   @include overview-card();
@@ -13,7 +14,17 @@
     width: 100%;
     gap: 2rem;
 
+    @include mq("tablet") {
+      @include flexbox(row, space-between, center);
+
+      .chart {
+        flex: 1;
+      }
+    }
+
     .chart {
+      width: 24rem;
+      height: 26rem;
       position: relative;
 
       .center-text {
@@ -30,6 +41,11 @@
       @include flexbox(row, flex-start, center, wrap);
       width: 100%;
       row-gap: 1.6rem;
+
+      @include mq("tablet") {
+        flex-direction: column;
+        width: 30%;
+      }
 
       .budget-item {
         @include flexbox(row, flex-start, center);
