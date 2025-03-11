@@ -18,7 +18,17 @@ export class NavigationsComponent {
   navItems = this.svgService.navigationIcons;
   activeIcon = this.svgService.activeIcon;
 
-  getSvgContent(path:string): SafeHtml {
-    return this.svgService.getSvgContent(path)
+  getSvgContent(path: string): SafeHtml {
+    return this.svgService.getSvgContent(path);
   }
+
+  largeLogo = this.svgService.getSvgContent(
+    this.svgService.icons.find((icon) => icon.name === 'logo-large')?.path || ''
+  );
+  largeSmall = this.svgService.getSvgContent(
+    this.svgService.icons.find((icon) => icon.name === 'logo-small')?.path || ''
+  );
+  minimizeMenu = this.svgService.getSvgContent(
+    this.svgService.icons.find((icon) => icon.name === 'minimize-menu')?.path || ''
+  );
 }
